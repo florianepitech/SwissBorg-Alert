@@ -23,7 +23,7 @@ public class MainTask implements Runnable {
     @Override
     public void run() {
         try {
-            System.out.println("Started new refresh task");
+            System.out.println(new Date().toInstant().toString() + " - Started new refresh task");
             JSONObject lastApy = new JSONObject(FileUtils.readFileAsString(MainClass.fileName));
             HashMap<String, Float> result = swissBorgAPI.getAllAPY();
             for (String key : result.keySet()) {
@@ -45,16 +45,16 @@ public class MainTask implements Runnable {
 
     private void sendNewAPYAlert(String coin, float apy) {
         telegramCannalAPI.addMessageToQueue("🆕 New APY for " + coin + ": " + apy + "%");
-        System.out.println(new Date().toString() + "New APY for " + coin + ": " + apy + "%");
+        System.out.println(new Date().toInstant().toString() + " - New APY for " + coin + ": " + apy + "%");
     }
 
     private void sendChangedAPYAlert(String coin, float lastApy, float newApy) {
         if (lastApy > newApy) {
-            telegramCannalAPI.addMessageToQueue("📉 APY for " + coin + " decreased from " + lastApy + "% to " + newApy + "% (" + (newApy - lastApy) + "%)");
+            telegramCannalAPI.addMessageToQueue("📉 APY for " + coin + " decreased from " + lastApy + "% to " + newApy + "% (" + String.format("%.2f", newApy - lastApy) + "%)");
         } else {
-            telegramCannalAPI.addMessageToQueue("📈 APY for " + coin + " increased from " + lastApy + "% to " + newApy + "% (" + (newApy - lastApy) + "%)");
+            telegramCannalAPI.addMessageToQueue("📈 APY for " + coin + " increased from " + lastApy + "% to " + newApy + "% (" + String.format("%.2f", newApy - lastApy) + "%)");
         }
-        System.out.println(new Date().toString() + "APY for " + coin + " changed from " + lastApy + "% to " + newApy + "%");
+        System.out.println(new Date().toInstant().toString() + " - APY for " + coin + " changed from " + lastApy + "% to " + newApy + "%");
     }
 
 }

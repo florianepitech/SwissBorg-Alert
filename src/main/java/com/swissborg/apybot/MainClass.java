@@ -6,8 +6,6 @@ import fr.florian.telegramcannalapi.TelegramCannalAPI;
 import fr.florian.telegramcannalapi.object.TelegramMessage;
 
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.security.KeyManagementException;
 import java.security.KeyStoreException;
 import java.security.NoSuchAlgorithmException;
