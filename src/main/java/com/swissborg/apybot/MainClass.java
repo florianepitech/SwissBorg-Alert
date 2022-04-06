@@ -16,8 +16,6 @@ import java.util.concurrent.TimeUnit;
 
 public class MainClass {
 
-    public static final String fileName = "apy.json";
-
     public static void main(String[] args) throws IOException, NoSuchAlgorithmException, KeyStoreException, KeyManagementException, HttpClientException, HttpServerException {
         checkEnvironmentsVariable();
         SwissBorgAPI bot = new SwissBorgAPI();
