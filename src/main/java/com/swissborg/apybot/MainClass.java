@@ -26,7 +26,7 @@ public class MainClass {
 
     private static void startTask(SwissBorgAPI bot, TelegramCannalAPI telegram) {
         ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(1);
-        scheduler.scheduleAtFixedRate(new MainTask(bot, telegram), 0, 30, TimeUnit.MINUTES);
+        scheduler.scheduleAtFixedRate(new MainTask(bot, telegram), 0, 5, TimeUnit.MINUTES);
     }
 
     private static void checkEnvironmentsVariable() {

@@ -108,7 +108,7 @@ public class MainTask implements Runnable {
         float standardLastApy = lastApy / 2;
         float standardNewApy = newApy / 2;
         if (lastApy > newApy) {
-            StringBuilder message = new StringBuilder("🔻 APY for " + coin + " decreased:\n\n");
+            StringBuilder message = new StringBuilder("↘️ APY for " + coin + " decreased:\n\n");
             for (AccountType accountType : AccountType.values()) {
                 float accountLastApy = standardLastApy * accountType.getMultiplier();
                 float accountNewApy = standardNewApy * accountType.getMultiplier();
@@ -121,7 +121,7 @@ public class MainTask implements Runnable {
             }
             telegramCannalAPI.addMessageToQueue(message.toString());
         } else {
-            StringBuilder message = new StringBuilder("🔺 APY for " + coin + " increase:\n\n");
+            StringBuilder message = new StringBuilder("↗️ APY for " + coin + " increase:\n\n");
             for (AccountType accountType : AccountType.values()) {
                 float accountLastApy = standardLastApy * accountType.getMultiplier();
                 float accountNewApy = standardNewApy * accountType.getMultiplier();
