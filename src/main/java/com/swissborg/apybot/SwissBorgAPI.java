@@ -6,7 +6,6 @@ import com.swissborg.apybot.network.HttpClientSession;
 import com.swissborg.apybot.objects.CryptoCurrency;
 import org.apache.http.HttpResponse;
 import org.apache.http.util.EntityUtils;
-import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.io.IOException;

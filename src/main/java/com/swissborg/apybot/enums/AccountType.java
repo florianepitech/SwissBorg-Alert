@@ -6,7 +6,7 @@ public enum AccountType {
 
     STANDARD("⚪️", "Standard", 1.0F, 0),
     COMMUNITY("🟣", "Community", 1.5F, 2000),
-    GENERATION("🔵", "Generation", 1.75F, 20000),
+    GENERATION("🔵", "Generation", 2.0F, 20000),
     GENESIS("🟢", "Genesis", 2.0F, 50000);
 
     private String symbol, name;
